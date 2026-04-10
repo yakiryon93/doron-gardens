@@ -1114,7 +1114,8 @@
         );
       } catch (err) {
         hideTyping();
-        appendBubble('מצטער, הייתה שגיאה בתקשורת עם השרת. אפשר לנסות שוב או לפנות ישירות בווטסאפ 📞', 'bot');
+        console.error('Chat error:', err);
+        appendBubble('מצטער, הייתה שגיאה: ' + err.message + '. אפשר לנסות שוב או לפנות ישירות בווטסאפ 📞', 'bot');
       } finally {
         isSending = false;
         sendBtn.disabled = input.value.trim().length === 0;
